@@ -1,34 +1,27 @@
 import express from "express";
 import { PORT } from "./env.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
 
 const app = express();
 
-app.get("/", (req, res) => res.send("<h1>Hello World!</h1>"));
-app.get("/about", (req, res) => res.send("<h1>Hello About Page!</h1>"));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-app.get("/contact", (req, res) => {
-   return res.send(`<div class="container">
-        <h1>URL Shortener</h1>
-        <form id="shorten-form">
-            <div>
-                <label for="url">Enter URL:</label>
-                <input type="url" name="url" id="url" required >
-            </div>
-            <div>
-                <label for="shortCode">Enter shortCode:</label>
-                <input type="text" name="shortCode" id="shortCode" required >
-            </div>
-            <button type="submit">Shorten</button>
-        </form>
-        <h2>Shortend URLs</h2>
-        <ul id="shortened-urls"></ul>
-    </div>`);
-});  
+app.get("/", (req, res) => {
+    // console.log(__dirname);
+    // console.log(__filename);
+    // console.log(import.meta.url);
+    // const __filename = new URL(import.meta.url).pathname;
+    // console.log(__filename);
 
-// console.log(process);
+    const homePagePath = path.join(__dirname, "public", "index.html");
 
-// const PORT = process.env.PORT || 3000;
+    res.sendFile(homePagePath);
+
+});
 
 app.listen(PORT, () => {
-    console.log(`Server is running at port: ${PORT}`);
+    console.log("Server is running on port 3000");
 });
