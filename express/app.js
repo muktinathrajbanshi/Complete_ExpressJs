@@ -9,6 +9,11 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// absolute path
+const staticPath = path.join(__dirname, "public");
+
+app.use("/public", express.static("public"));
+
 app.get("/", (req, res) => {
     // console.log(__dirname);
     // console.log(__filename);
