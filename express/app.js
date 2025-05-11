@@ -1,29 +1,33 @@
 import express from "express";
 import { PORT } from "./env.js";
 import path from "path";
-import { fileURLToPath } from "url";
+// import { fileURLToPath } from "url";
 
 
 const app = express();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
+console.log(import.meta.dirname);
+console.log(import.meta.filename);
+
+
 
 // absolute path
-const staticPath = path.join(__dirname, "public");
+const staticPath = path.join(import.meta.dirname, "public");
 
-app.use("/public", express.static("public"));
+app.use("/public", express.static(staticPath));
 
-app.get("/", (req, res) => {
-    // console.log(__dirname);
-    // console.log(__filename);
-    // console.log(import.meta.url);
-    // const __filename = new URL(import.meta.url).pathname;
-    // console.log(__filename);
+app.get("/profile/:username", (req, res) => {
+    
+console.log(req.params);
+res.send(`<h1> My username is ${req.params.username} </h1>`);
 
-    const homePagePath = path.join(__dirname, "public", "index.html");
+});
 
-    res.sendFile(homePagePath);
+app.get("/profile/:username/article/:slug", (req, res) => {
+console.log(req.params);
+const formatedSlug = req.params.slug.replace(/-/g, " ");
+res.send(`<h1> Article ${req.params.username} by ${formatedSlug} </h1>`);
 
 });
 
