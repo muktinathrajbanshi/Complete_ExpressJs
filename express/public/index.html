@@ -6,13 +6,22 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="text-section">
-        <h1>Never Loose Hope</h1>
-        <p>You are beautiful the way you are. Keep doing the good work.</p>
-        <a href="#">God Bless You & Happy New Year</a>
+    <h1>Home Page</h1>
+    <!-- By default, form tag sends GET request to the action. It will send as query parameter -->
+     <form action="/contact" method="post">
+         <div>
+        <label for="name">Name</label>
+        <!-- <input type="text" name="name" id="name" /> -->
+        <input type = "text" name="user[name]" id="name" />
+        </div>
+    <div>
+        <label for="message">Message</label>
+        <!-- <textarea name="message" id="message" placeholder="Write your message here"></textarea> -->
+        <textarea name="user[message]" id="message" placeholder="Write your message here"></textarea>
     </div>
-    <div class="img">
-        <img src="https://madhuri-dixit.tumblr.com/image/77704152547" alt="">
-    </div>
+
+    <button>Submit</button>
+     </form>
+   
 </body>
 </html>
