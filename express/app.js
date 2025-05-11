@@ -7,8 +7,8 @@ import path from "path";
 const app = express();
 
 
-console.log(import.meta.dirname);
-console.log(import.meta.filename);
+// console.log(import.meta.dirname);
+// console.log(import.meta.filename);
 
 
 
@@ -16,6 +16,11 @@ console.log(import.meta.filename);
 const staticPath = path.join(import.meta.dirname, "public");
 
 app.use("/public", express.static(staticPath));
+
+app.get("/product", (req, res) => {
+    console.log(req.query);
+    res.send(`<h1> user search for Product ${req.query.page} ${req.query.limit} mobile </h1>`);
+});
 
 app.get("/profile/:username", (req, res) => {
     
