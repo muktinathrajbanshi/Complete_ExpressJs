@@ -1,5 +1,4 @@
 import {readFile, writeFile} from "fs/promises";
-import { createServer } from "http";
 import crypto from "crypto";
 import path from "path";
 import express from "express";
@@ -10,10 +9,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.join("data", "links.json");
 
-app.use(express.urlencoded({ extended: true }));
-
-
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 
 const serveFile = async (res, filePath, contentType) => {
     try {
@@ -30,7 +27,7 @@ const serveFile = async (res, filePath, contentType) => {
 const loadLinks = async () => {
     try {
         const data = await readFile(DATA_FILE, "utf-8");
-        if (!data.trim()) return {};
+        // if (!data.trim()) return {};
         return JSON.parse(data);
     } catch (error) {
         if(error.code === "ENOENT") {
@@ -50,7 +47,7 @@ app.get("/", async (req, res) => {
         const file = await readFile(path.join("views", "index.html"));
         const links = await loadLinks();
 
-        const content = file.toString().replaceAll("{{ shortened_urls }}", Object.entries(links).map(([shortCode, url]) => `<li><a href="/${shortCode}" target="_blank">${req.host}/${shortCode}</a> - ${url}</li>`).join(""));
+        const content = file.toString().replaceAll( "{{ shortened_urls }}", Object.entries(links).map(([shortCode, url]) => `<li><a href="/${shortCode}" target="_blank">${req.host}/${shortCode}</a> - ${url}</li>`).join(""));
 
     return res.send(content);
 
@@ -90,8 +87,8 @@ app.get("/:shortCode", async (req, res) => {
         if (!links[shortCode]) return res.status(404).send("404 error occurred");
 
         return res.redirect(links[shortCode]);
-    } catch (error) {
-        console.error(error);
+    } catch (err) {
+        console.error(err);
         return res.status(500).send("Internal server error");
     }
 });
