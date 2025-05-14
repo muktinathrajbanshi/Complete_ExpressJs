@@ -2,13 +2,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Student Report Card</h1>
-    <p>Name: <%= student.name %></p>
-    <p>Sex: <%= student.sex %></p>
-    <p>nationality: <%= student.nationality %></p>
 
+    <%- include("header") %>
+
+    <section>
+        <h1>Student Report Card</h1>
+        <%# ejs comments %>
+        <ul>
+            <% student.forEach((stud) => { %>
+                <li>
+                    <p>Name: <%= stud.name %></p>
+                    <p>Place: <%= stud.place %></p>
+                    <p>Sex: <%= stud.sex %></p>
+                </li>
+            <% }) %>
+        </ul>
+    </section>
 </body>
 </html>

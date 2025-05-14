@@ -39,11 +39,24 @@ const saveLinks = async (links) => {
 };
 
 router.get("/report", (req, res) => {
-    const student = {
-        name: "Muktinath",
-        sex: "Male",
-        nationality: "Nepali",
-    };
+    const student = [
+        {
+            name: "Muktinath",
+            place: "Kathmandu",
+            sex: "Male",
+        },
+        {
+            name: "Sita",
+            place: "Pokhara",
+            sex: "Female",
+        },
+        {
+            name: "Raju",
+            place: "Simla",
+            sex: "Male",
+        },
+    ];
+        
    return res.render("report", {student});
 });
 
