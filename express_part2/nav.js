@@ -12,7 +12,10 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-    res.send("Welcome to my contact page");
+    res.write("<h1>Welcome to my contact page</h1>");
+    res.write("<h1>Welcome to my contact page again</h1>");
+    res.send();
+
 });
 
 app.get("/services", (req, res) => {
@@ -20,7 +23,21 @@ app.get("/services", (req, res) => {
 });
 
 app.get("/blogs", (req, res) => {
-    res.send("Welcome to my blogs page");
+    res.send([
+        {
+        id:1,
+        name: "muktinath",
+        },
+        {
+        id:1,
+        name: "muktinath",
+        },
+        {
+        id:1,
+        name: "muktinath",
+        },
+
+]);
 });
 
 app.listen(port, () => {
