@@ -1,6 +1,21 @@
 import express from "express";
+import path from "path";
 const app = express();
+import { fileURLToPath } from "url";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// console.log(__dirname);
+
+
+
+
+const staticPath = (path.join(__dirname, "../public"));
+
+
+//builtin middleware
+app.use(express.static(staticPath));
 
 app.get("/", (req, res) => {
     res.send("Hello buddy");
