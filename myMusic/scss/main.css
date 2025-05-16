@@ -297,4 +297,39 @@ a:hover {
   filter: drop-shadow(0 1.5rem 1rem rgba(0, 0, 0, 0.8));
   -webkit-filter: drop-shadow(0 1.5rem 1rem rgba(0, 0, 0, 0.8));
 }
+
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+  .main_header {
+    line-height: 5rem;
+    text-align: center;
+    padding: 2rem;
+  }
+  .main_header .navbar-nav {
+    padding-left: 3rem;
+  }
+  .main_header .navbar-nav .nav-item .nav-link {
+    padding-right: 0%;
+  }
+  .main_header .navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  .header_hero__text .header_text__btn {
+    display: block;
+    margin: 0 auto;
+  }
+  .header_hero__text .header_text__btn a {
+    display: block;
+    text-align: center;
+  }
+  .header_hero__text .header_text__btn #btn__2 {
+    margin-top: 2rem;
+    margin-left: 0%;
+  }
+  .header_hero__img {
+    display: none;
+  }
+}
 /*# sourceMappingURL=main.css.map */
