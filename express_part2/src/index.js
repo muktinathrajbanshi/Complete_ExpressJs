@@ -11,8 +11,21 @@ const __dirname = path.dirname(__filename);
 // built in middleware
 
 const staticPath = path.join(__dirname, "../public");
+const viewsPath = path.join(__dirname, "../views");
+
+
+// to set the view engine
+app.set("views", viewsPath);
+app.set("view engine", "hbs");
 
 app.use(express.static(staticPath));
+
+// template engine route
+app.get("/", (req, res) => {
+    res.render("index", {
+    channelName : "rajbanshi",
+    });
+});
 
 app.get("/", (req, res) => {
     res.send("hello how are you for the express server");
