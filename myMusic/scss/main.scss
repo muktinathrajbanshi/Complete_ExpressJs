@@ -17,6 +17,37 @@ a:hover{
 
 .main_header{
     width: 100vw;
-    height: 10rem;
-    background: $main-color;
+    line-height: 10rem;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))$main-color;
+
+    & .navbar-brand {
+        color: $text-color;
+        animation: music 1s linear infinite;
+        -webkit-animation: music 1s linear infinite;
+        animation-direction: alternate;
+
+        & .fas{
+            font-size: 4rem;
+        }
+
+        @keyframes music {
+            form{
+                transform: rotate(5deg);
+                -webkit-transform: rotate(5deg);
+                -moz-transform: rotate(5deg);
+                -ms-transform: rotate(5deg);
+                -o-transform: rotate(5deg);
+            }to {
+                transform: rotate(-5deg);
+                -webkit-transform: rotate(-5deg);
+                -moz-transform: rotate(-5deg);
+                -ms-transform: rotate(-5deg);
+                -o-transform: rotate(-5deg);
+                }
+          }
+    }
+    & .navbar-brand:hover {
+        color: $primary-color;
+    }
 }
+

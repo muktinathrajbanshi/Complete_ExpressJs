@@ -15,7 +15,58 @@ a:hover {
 
 .main_header {
   width: 100vw;
-  height: 10rem;
-  background: #0a183d;
+  line-height: 10rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))) #0a183d;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) #0a183d;
+}
+
+.main_header .navbar-brand {
+  color: #fff;
+  animation: music 1s linear infinite;
+  -webkit-animation: music 1s linear infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+.main_header .navbar-brand .fas {
+  font-size: 4rem;
+}
+
+@-webkit-keyframes music {
+  form {
+    transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+  }
+}
+
+@keyframes music {
+  form {
+    transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+  }
+}
+
+.main_header .navbar-brand:hover {
+  color: #b71540;
 }
 /*# sourceMappingURL=main.css.map */
