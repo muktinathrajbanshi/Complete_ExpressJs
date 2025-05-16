@@ -1,37 +1,17 @@
 import express from "express";
 import path from "path";
 const app = express();
-import { fileURLToPath } from "url";
+const port = 3000;
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// built in middleware
 
-// console.log(__dirname);
-
-
-
-
-const staticPath = (path.join(__dirname, "../public"));
-
-
-//builtin middleware
-app.use(express.static(staticPath));
+app.use(express.static(path))
 
 app.get("/", (req, res) => {
-    res.send("Hello buddy");
+    res.send("hello how are you for the express server");
 });
 
-app.get("/about", (req, res) => {
-    res.send("Hello buddy how are you");
-});
-
-
-app.listen(3000, () => {
-    console.log("listening the port at 3000");
+app.listen(port, () => {
+    console.log(`listening the port at ${port}`);
 })
-// The callback function has 2 parameters, request(req) and response(res).
-// The request object(req) represents the HTTP request and has properties for the request
-// query string, parameters, body, HTTP headers, etc.
-// Similarly, the response object represents the HTTP response that the Express app sends when it 
-// receives an HTTP request.
 
