@@ -36,9 +36,11 @@ app.get("/about", (req, res) => {
     res.render("about");
 });
 
-app.get("/", (req, res) => {
-    res.send("hello how are you for the express server");
-});
+// app.get("*", (req, res) => {
+//     res.render("404", {
+//         errorComment :" Oops page couldn't be found!",
+//     });
+// });
 
 app.listen(port, () => {
     console.log(`listening the port at ${port}`);
