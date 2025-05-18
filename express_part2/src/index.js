@@ -3,6 +3,7 @@ import path from "path";
 const app = express();
 import { fileURLToPath } from 'url';
 import hbs from "hbs";
+import request from "request";
 
 const port = 3000;
 
@@ -32,8 +33,24 @@ app.get("/", (req, res) => {
     });
 });
 
+
+
 app.get("/about", (req, res) => {
-    res.render("about");
+    request(
+        `https://api.openweathermap.org/data/2.5/weather?q=${req.query.name}&units=metric&appid=a609106e599dc0bd064bcbef1de49f82`
+    )
+    .on("data", (chunk) => {
+        const objData = JSON.parse(chunk);
+        const arrData = [objData];
+        console.log(`city name is ${arrData[0].name} and the temp is ${arrData[0].main.temp}`);
+
+        res.write(arrData[0].name);
+        // console.log(realTimeData);
+    })
+    .on("end", (err) => {
+        if (err) return console.log("connection closed due to errors", err);
+        res.end();
+    });
 });
 
 // app.get("*", (req, res) => {

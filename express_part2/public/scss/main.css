@@ -301,6 +301,9 @@ a:hover {
   filter: drop-shadow(0 1.5rem 1rem rgba(0, 0, 0, 0.8));
   -webkit-filter: drop-shadow(0 1.5rem 1rem rgba(0, 0, 0, 0.8));
 }
+
+
+
 /* footoer style */
 .footer {
   width: 100%;
