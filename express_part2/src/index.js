@@ -13,13 +13,11 @@ const __dirname = path.dirname(__filename);
 // built in middleware
 
 const staticPath = path.join(__dirname, "../public");
-const viewsPath = path.join(__dirname, "../views");
 const templatePath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
 
 
 // to set the view engine
-app.set("views", viewsPath);
 app.set("view engine", "hbs");
 app.set("views", templatePath);
 hbs.registerPartials(partialsPath);
