@@ -139,6 +139,48 @@ body{
     -webkit-filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.3));
 }
 
+/* error page style start */
+ .errimg img {
+    width: 60rem;
+    height: 30rem;
+ }
+/* error page style end */
+
+.tempInformation {
+    width: 40rem;
+    height: auto;
+    min-height: 20rem;
+    background-color: #323544;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    /* padding: 1rem; */
+    font-family: "Roboto", sans-serif;
+}
+
+.top_layer {
+    width: 100%;
+    height: 20%;
+    background-color: #2d303d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.top_layer p {
+    color: #fff;
+    font-weight: 300;
+    padding: 2rem;
+}
+
+
 /* footer code start */
 
     footer {
