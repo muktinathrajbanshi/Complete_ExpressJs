@@ -139,17 +139,64 @@ body{
     -webkit-filter: drop-shadow(0 0.5rem 1rem rgba(0, 0, 0, 0.3));
 }
 
-/* error page style start */
- .errimg img {
-    width: 60rem;
-    height: 30rem;
+
+/* temp input fields style code start */
+
+ .temp_form {
+    width: 60%;
+    position: relative;
+    margin: 5rem auto 6rem;
  }
-/* error page style end */
+
+ .temp_form input[type="text"] {
+    width: 100%;
+    padding: 2rem 5rem 2rem 2rem;
+    background: #1e202b;
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 1.7rem;
+    border-radius: 3rem;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+}
+
+::placeholder {
+    color: #bfc1c8;
+}
+
+.temp_form input[type="submit"] {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: none;
+    background: #009ad8;
+    padding: 0 3rem;
+    border-radius: 3rem;
+    color: white;
+    font-size: 1.6rem;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+}
+
+.temp_form input[type="submit"]:hover {
+    color: #009ad8;
+    background-color: #fff;
+}
+
+/* temp input fields style code end */
+
 
 .tempInformation {
     width: 40rem;
     height: auto;
     min-height: 20rem;
+    margin-left: 55rem;
     background-color: #323544;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -178,8 +225,61 @@ body{
     color: #fff;
     font-weight: 300;
     padding: 2rem;
+    font-size: 1.4rem;
 }
 
+.main_layer {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+
+}
+
+.main_layer #city_name {
+    padding: 2rem 0;
+    color: #bfc1c8;
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.main_layer .middle_layer {
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+}
+
+.main_layer .middle_layer p,
+.main_layer .middle_layer .fa {
+    font-size: 7rem;
+    font-weight: 900;
+}
+
+.fa {
+    color: #009ad8;
+}
+
+sup {
+    font-size: 6rem;
+    margin-top: -2rem;
+}
+
+.data_hide {
+    visibility: hidden;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+}
+
+/* error page style start */
+ .errimg img {
+    width: 60rem;
+    height: 30rem;
+ }
+/* error page style end */
 
 /* footer code start */
 
