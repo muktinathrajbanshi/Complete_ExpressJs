@@ -194,9 +194,8 @@ body{
 
 .tempInformation {
     width: 40rem;
-    height: auto;
+    margin: auto;
     min-height: 20rem;
-    margin-left: 55rem;
     background-color: #323544;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;

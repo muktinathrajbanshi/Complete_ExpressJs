@@ -1,6 +1,7 @@
 const submitBtn = document.getElementById("submitBtn");
 
-const getInfo = () => {
+const getInfo = (event) => {
+    event.preventDefault();
     alert("hi");
 }
 
