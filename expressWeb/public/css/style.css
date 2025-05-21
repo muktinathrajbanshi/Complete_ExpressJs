@@ -145,7 +145,7 @@ body{
  .temp_form {
     width: 60%;
     position: relative;
-    margin: 5rem auto 6rem;
+    margin: 4rem auto 1.5rem;
  }
 
  .temp_form input[type="text"] {
@@ -193,7 +193,7 @@ body{
 
 
 .tempInformation {
-    width: 40rem;
+    width: 50rem;
     margin: auto;
     min-height: 20rem;
     background-color: #323544;
@@ -202,7 +202,6 @@ body{
     -moz-border-radius: 1rem;
     -ms-border-radius: 1rem;
     -o-border-radius: 1rem;
-    /* padding: 1rem; */
     font-family: "Roboto", sans-serif;
 }
 
