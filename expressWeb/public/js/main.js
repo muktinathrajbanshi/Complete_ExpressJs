@@ -8,6 +8,7 @@ const temp_status = document.getElementById("temp_status");
 
 const datahide = document.querySelector(".middle_layer");
 
+
 const getInfo = async (event) => {
     event.preventDefault();
     let cityVal = cityName.value;
@@ -51,3 +52,24 @@ const getInfo = async (event) => {
 }
 
 submitBtn.addEventListener("click", getInfo);
+
+
+const getCurrentDayAndDate = () => {
+    const dayElement = document.getElementById("day");
+    const dateElement = document.getElementById("today_date");
+
+    const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+    const now = new Date();
+    const day = weekday[now.getDay()];
+    const date = now.getDate();
+    const month = months[now.getMonth()];
+
+    dayElement.innerText = day;
+    dateElement.innerText = `${date} ${month}`;
+};
+
+// Call the
+getCurrentDayAndDate();
